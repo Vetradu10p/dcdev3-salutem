@@ -74,22 +74,8 @@
                 </form>
             </article>
                 {% for doctor in doctors %}
-            <article class="doctor-thumbnail">
-                <img src="{{ asset('uploads/' ~ doctor.photo) }}" alt="Jack Smith">
-                <div class="doctor-details">
-                    <h4>{{ doctor.fullname }}</h4>
-                    <p class="doctor-skills">
-                        {% for skill in doctor.skills %}
-                          <span>{{ skill.label }}</span>
-                        {% endfor %}
-                    </p>
-                    <a href="#" class="btn btn-dark">
-                        <i class="fa fa-eye"></i>
-                        Plus d'informations
-                    </a>
-                </div>
-            </article>
-            {% endfor %}
+                    {% include 'doctor/_thumbnail.html.twig' with { 'doctor': doctor} %}
+                    {% endfor %}
         </div>
     </section>
 {% endblock %}

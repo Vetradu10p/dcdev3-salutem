@@ -14,6 +14,7 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
+        // Rechercher les données
         $doctors = $this->getDoctrine()->getRepository(Doctor::class)->findAll();
         $openingHours = $this->getDoctrine()->getRepository(OpeningHour::class)->findAll();
 
